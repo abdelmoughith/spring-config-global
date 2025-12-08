@@ -9,5 +9,6 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/abdelmoughith/microservices-config
+          uri: git@github.com:abdelmoughith/microservices-config.git
           clone-on-start: true
+          private-key: ~/.ssh/id_ed25519
