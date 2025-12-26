@@ -4,11 +4,22 @@ server:
 spring:
   application:
     name: config-server
-
   cloud:
     config:
       server:
         git:
-          uri: git@github.com:abdelmoughith/microservices-config.git
+          #uri: git@github.com:abdelmoughith/microservices-config.git
+          uri: https://github.com/abdelmoughith/microservices-config.git
+          #default-label: main
           clone-on-start: true
-          private-key: ~/.ssh/id_ed25519
+          #private-key: ~/.ssh/id_ed25519
+
+# Actuator for health checks (used by docker-compose)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
